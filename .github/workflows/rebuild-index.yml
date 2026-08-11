@@ -1,0 +1,24 @@
+name: Rebuild single index
+on:
+  push:
+    branches: [main]
+permissions:
+  contents: write
+jobs:
+  rebuild:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Rebuild index and clean repo
+        run: |
+          cat tmp/part*.txt > /tmp/site.b64
+          base64 -d /tmp/site.b64 > /tmp/site.gz
+          gzip -dc /tmp/site.gz > index.html
+          rm -rf tmp pack loader.js
+          rm -rf .github
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Publish K-Music as single index.html"
+          git push
