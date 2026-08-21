@@ -1,12 +1,10 @@
 name: Rebuild single index
 on:
-  push:
-    branches: [main]
+  workflow_dispatch:
 permissions:
   contents: write
 jobs:
   rebuild:
-    if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
