@@ -1,0 +1,32 @@
+name: Publish Mix Lab
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/publish-mix.yml'
+permissions:
+  contents: write
+jobs:
+  publish:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Patch Mix Lab and clean repo
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat patchmix/part*.txt > /tmp/patch.b64
+          base64 -d /tmp/patch.b64 | gzip -dc > /tmp/patch_mix.py
+          echo "c963a36f7f14a5ebb29e527c7479b8e2c3425121305bc0fa3fe1de502a1b8a2e  /tmp/patch_mix.py" | sha256sum -c -
+          python /tmp/patch_mix.py
+          test "$(wc -c < index.html)" -eq 429608
+          echo "d825d2c530d4d9bcba370682329a251b54ee30099d43f54f8b50c2acc7c46972  index.html" | sha256sum -c -
+          grep -q 'id="mix-studio"' index.html
+          grep -q 'OfflineAudioContext' index.html
+          rm -rf deploymix patchmix .github
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Add K-Music Mix Lab"
+          git push
