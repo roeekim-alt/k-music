@@ -624,12 +624,29 @@
     }
 
 
+    /* ===== K-Music Studio / Mix tool ===== */
+    .mix-shell{width:min(1180px,calc(100% - 28px));margin:0 auto;display:grid;gap:16px}
+    .mix-hero{display:flex;justify-content:space-between;align-items:flex-end;gap:18px;flex-wrap:wrap;padding:24px;border:1px solid var(--line);border-radius:28px;background:linear-gradient(135deg,rgba(124,92,255,.15),rgba(30,215,96,.08),rgba(255,61,90,.08));box-shadow:var(--shadow)}
+    .mix-hero h2{font-family:Rubik,sans-serif;font-size:clamp(2.2rem,7vw,4.4rem);letter-spacing:-.055em;margin:0 0 8px}.mix-hero p{margin:0;color:var(--muted);max-width:720px;line-height:1.65}
+    .mix-toolbar{display:flex;gap:9px;flex-wrap:wrap}.mix-btn{min-height:44px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.06);color:#fff;padding:10px 14px;font:inherit;font-weight:850;cursor:pointer}.mix-btn:hover{background:rgba(255,255,255,.1)}.mix-btn.primary{background:linear-gradient(135deg,var(--accent),var(--accent2));border-color:transparent}.mix-btn.recording{background:#e33;border-color:#ff7676}.mix-btn:disabled{opacity:.45;cursor:not-allowed}
+    .mix-transport{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:14px;align-items:center;padding:15px 18px;border:1px solid var(--line);border-radius:20px;background:rgba(255,255,255,.035)}
+    .mix-time{display:flex;align-items:center;gap:12px;min-width:0}.mix-time strong{font-variant-numeric:tabular-nums;white-space:nowrap}.mix-progress{height:8px;flex:1;border-radius:999px;background:rgba(255,255,255,.09);overflow:hidden}.mix-progress i{display:block;height:100%;width:0;background:linear-gradient(90deg,#a78bfa,#1ed760);border-radius:999px}
+    .mix-master{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:.88rem}.mix-master input{width:120px;accent-color:#1ed760}
+    .mix-drop{border:1px dashed rgba(255,255,255,.22);border-radius:22px;padding:24px;text-align:center;background:rgba(255,255,255,.025);color:var(--muted);transition:.18s ease}.mix-drop.drag{border-color:#7ee7ff;background:rgba(126,231,255,.07);color:#fff}.mix-drop strong{display:block;color:#fff;font-size:1.05rem;margin-bottom:4px}
+    .mix-tracks{display:grid;gap:12px}.mix-empty{border:1px solid var(--line);border-radius:24px;padding:34px;text-align:center;color:var(--muted);background:rgba(255,255,255,.025)}
+    .mix-track{display:grid;grid-template-columns:210px minmax(180px,1fr) minmax(300px,1.4fr);gap:14px;align-items:center;padding:14px;border:1px solid var(--line);border-radius:22px;background:rgba(255,255,255,.035)}
+    .mix-track-info{min-width:0}.mix-track-name{font-weight:900;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.mix-track-meta{color:var(--muted);font-size:.8rem;margin-top:3px}.mix-wave{width:100%;height:64px;border-radius:13px;background:#0b0c12;display:block}.mix-controls{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 12px}.mix-control{display:grid;grid-template-columns:58px 1fr 42px;align-items:center;gap:7px;font-size:.78rem;color:var(--muted)}.mix-control input{width:100%;accent-color:#a78bfa}.mix-control output{color:#fff;text-align:left;font-variant-numeric:tabular-nums}
+    .mix-track-actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:8px}.mix-chip{min-height:34px;border:1px solid var(--line);border-radius:11px;background:rgba(255,255,255,.05);color:#fff;padding:6px 10px;font:inherit;font-size:.78rem;font-weight:800;cursor:pointer}.mix-chip.active{background:#fff;color:#09090c}.mix-chip.danger{color:#ff91a3}.mix-track.solo-dim{opacity:.42}
+    .mix-status{min-height:22px;color:var(--muted);font-size:.9rem;padding:0 4px}.mix-status.ok{color:#7ef0a5}.mix-status.err{color:#ff91a3}
+    @media(max-width:900px){.mix-track{grid-template-columns:1fr 1fr}.mix-controls{grid-column:1/-1}.mix-wave{height:58px}.mix-transport{grid-template-columns:1fr}.mix-master{justify-content:space-between}.mix-master input{flex:1}}
+    @media(max-width:600px){.mix-shell{width:min(100% - 18px,1180px)}.mix-hero{padding:18px;border-radius:22px}.mix-toolbar{width:100%}.mix-btn{flex:1 1 44%}.mix-track{grid-template-columns:1fr;padding:12px}.mix-controls{grid-column:auto;grid-template-columns:1fr}.mix-control{grid-template-columns:54px 1fr 40px}.mix-track-actions{justify-content:space-between}.mix-chip{flex:1}.mix-master{flex-wrap:wrap}.mix-master input{min-width:160px}.mix-drop{padding:18px}}
+
   </style>
 </head>
 <body>
   <nav>
     <a class="logo" href="#top">קמחי<span>.</span></a>
-    <div class="nav-links"><a href="#music">קמחי</a><a href="#influences">השראות</a><a href="#lineage">עץ השפעות</a><a href="#world">מפת עולם</a><a href="#inspiration-finder">מצא לי השראה</a><a href="#lyric-finder">רדאר ליריקה</a><a href="#notebook">המחברת</a><a href="#music-worlds">עולמות מוזיקליים</a><a href="#eras">תקופות</a><a href="#community">קהילה</a><a href="#merch">מארצ׳</a><a href="#trivia">טריוויה</a><a href="#about">הסיפור</a></div>
+    <div class="nav-links"><a href="#music">קמחי</a><a href="#influences">השראות</a><a href="#lineage">עץ השפעות</a><a href="#mix-studio">Mix Lab</a><a href="#world">מפת עולם</a><a href="#inspiration-finder">מצא לי השראה</a><a href="#lyric-finder">רדאר ליריקה</a><a href="#notebook">המחברת</a><a href="#music-worlds">עולמות מוזיקליים</a><a href="#eras">תקופות</a><a href="#community">קהילה</a><a href="#merch">מארצ׳</a><a href="#trivia">טריוויה</a><a href="#about">הסיפור</a></div>
     <a class="nav-cta" href="https://open.spotify.com/album/0JkJZrveo5rLG2STmtMemq" target="_blank" rel="noopener">פתח ב‑Spotify ↗</a>
   </nav>
 
@@ -1091,6 +1108,29 @@
           <p>שבעה שירים, עולם אחד, בלי הצגות. מהכאב עד התקווה — זה הסיפור של קמחי כמו שהוא באמת.</p>
           <a class="primary-btn" style="align-self:flex-start" href="https://open.spotify.com/album/0JkJZrveo5rLG2STmtMemq" target="_blank" rel="noopener">האזנה לאלבום ב‑Spotify ↗</a>
         </div>
+      </div>
+    </section>
+
+
+    <section id="mix-studio">
+      <div class="mix-shell">
+        <div class="mix-hero">
+          <div><div class="eyebrow"><span class="dot"></span> K‑MUSIC STUDIO</div><h2>Mix Lab</h2><p>העלו כמה קבצי אודיו או הקליטו ישירות מהמיקרופון, איזנו ווליום ופאן לכל ערוץ, עשו Mute / Solo, הזיזו כניסה בזמן והורידו את המיקס כקובץ WAV.</p></div>
+          <div class="mix-toolbar">
+            <input id="mixFileInput" type="file" accept="audio/*" multiple hidden>
+            <button class="mix-btn primary" id="mixUploadBtn" type="button">＋ העלאת אודיו</button>
+            <button class="mix-btn" id="mixRecordBtn" type="button">● הקלטה</button>
+            <button class="mix-btn" id="mixRecordStopBtn" type="button" disabled>■ עצור הקלטה</button>
+            <button class="mix-btn" id="mixExportBtn" type="button" disabled>⇩ ייצוא WAV</button>
+          </div>
+        </div>
+        <div class="mix-transport">
+          <div class="mix-time"><button class="mix-btn" id="mixPlayBtn" type="button" disabled>▶ Play</button><button class="mix-btn" id="mixStopBtn" type="button" disabled>■ Stop</button><strong id="mixClock">00:00.0</strong><div class="mix-progress" aria-hidden="true"><i id="mixProgressBar"></i></div></div>
+          <label class="mix-master">MASTER <input id="mixMaster" type="range" min="0" max="1.5" value="1" step="0.01"><span id="mixMasterValue">100%</span></label>
+        </div>
+        <div class="mix-drop" id="mixDropZone"><strong>גררו לכאן קבצי אודיו</strong>MP3, WAV, M4A וקבצים שהדפדפן יודע לפענח. כל קובץ הופך לערוץ נפרד.</div>
+        <div class="mix-status" id="mixStatus" aria-live="polite">הכל עובד מקומית בדפדפן — הקבצים לא מועלים לשרת.</div>
+        <div class="mix-tracks" id="mixTracks"><div class="mix-empty">עדיין אין ערוצים. העלו ביט, ווקאל, אד־ליבס או הקליטו משהו חדש.</div></div>
       </div>
     </section>
 
@@ -3197,12 +3237,54 @@ d.c.t על הכל
 
   </script>
 
+
+  <script>
+  (()=>{
+    const $=id=>document.getElementById(id);
+    const root=$('mix-studio'); if(!root)return;
+    const fileInput=$('mixFileInput'), uploadBtn=$('mixUploadBtn'), recordBtn=$('mixRecordBtn'), recordStopBtn=$('mixRecordStopBtn'), exportBtn=$('mixExportBtn');
+    const playBtn=$('mixPlayBtn'), stopBtn=$('mixStopBtn'), tracksEl=$('mixTracks'), statusEl=$('mixStatus'), drop=$('mixDropZone'), clock=$('mixClock'), progress=$('mixProgressBar'), master=$('mixMaster'), masterVal=$('mixMasterValue');
+    let ctx=null, tracks=[], playing=false, startedAt=0, playhead=0, raf=0, mediaRecorder=null, recChunks=[], recStream=null, recStarted=0, recTimer=0;
+    const audioCtx=()=>ctx||(ctx=new (window.AudioContext||window.webkitAudioContext)());
+    const fmt=t=>{t=Math.max(0,t||0);const m=Math.floor(t/60),sec=t-m*60;return String(m).padStart(2,'0')+':'+sec.toFixed(1).padStart(4,'0')};
+    const duration=()=>tracks.reduce((m,t)=>Math.max(m,t.offset+t.buffer.duration),0);
+    function setStatus(msg,type=''){statusEl.textContent=msg;statusEl.className='mix-status '+type}
+    function updateButtons(){const has=tracks.length>0;playBtn.disabled=!has;stopBtn.disabled=!has;exportBtn.disabled=!has;playBtn.textContent=playing?'❚❚ Pause':'▶ Play'}
+    function drawWave(canvas,buffer){const c=canvas.getContext('2d'),w=canvas.width=canvas.clientWidth*devicePixelRatio,h=canvas.height=canvas.clientHeight*devicePixelRatio;c.clearRect(0,0,w,h);const data=buffer.getChannelData(0),step=Math.max(1,Math.floor(data.length/w));c.strokeStyle='#a78bfa';c.lineWidth=Math.max(1,devicePixelRatio);c.beginPath();for(let x=0;x<w;x++){let min=1,max=-1;const start=x*step;for(let j=0;j<step&&start+j<data.length;j++){const v=data[start+j];if(v<min)min=v;if(v>max)max=v}const y1=(1+min)*h/2,y2=(1+max)*h/2;c.moveTo(x,y1);c.lineTo(x,y2)}c.stroke()}
+    function render(){
+      if(!tracks.length){tracksEl.innerHTML='<div class="mix-empty">עדיין אין ערוצים. העלו ביט, ווקאל, אד־ליבס או הקליטו משהו חדש.</div>';updateButtons();return}
+      const soloing=tracks.some(t=>t.solo);
+      tracksEl.innerHTML=tracks.map((t,i)=>`<article class="mix-track${soloing&&!t.solo?' solo-dim':''}" data-id="${t.id}"><div class="mix-track-info"><div class="mix-track-name" title="${t.name.replace(/"/g,'&quot;')}">${i+1}. ${t.name}</div><div class="mix-track-meta">${fmt(t.buffer.duration)} · ${t.buffer.numberOfChannels===1?'MONO':'STEREO'} · ${(t.buffer.sampleRate/1000).toFixed(1)} kHz</div><div class="mix-track-actions"><button class="mix-chip ${t.mute?'active':''}" data-act="mute">MUTE</button><button class="mix-chip ${t.solo?'active':''}" data-act="solo">SOLO</button><button class="mix-chip danger" data-act="remove">מחק</button></div></div><canvas class="mix-wave"></canvas><div class="mix-controls"><label class="mix-control"><span>VOL</span><input data-ctl="gain" type="range" min="0" max="1.5" step="0.01" value="${t.gain}"><output>${Math.round(t.gain*100)}%</output></label><label class="mix-control"><span>PAN</span><input data-ctl="pan" type="range" min="-1" max="1" step="0.01" value="${t.pan}"><output>${t.pan===0?'C':t.pan<0?'L'+Math.round(-t.pan*100):'R'+Math.round(t.pan*100)}</output></label><label class="mix-control"><span>START</span><input data-ctl="offset" type="range" min="0" max="30" step="0.1" value="${t.offset}"><output>${t.offset.toFixed(1)}s</output></label></div></article>`).join('');
+      tracksEl.querySelectorAll('.mix-track').forEach(el=>{const t=tracks.find(x=>x.id===el.dataset.id);drawWave(el.querySelector('canvas'),t.buffer)});updateButtons();
+    }
+    async function addFile(file,name=file.name){try{const ac=audioCtx();const arr=await file.arrayBuffer();const buffer=await ac.decodeAudioData(arr.slice(0));tracks.push({id:crypto.randomUUID?crypto.randomUUID():String(Date.now()+Math.random()),name:name||'Audio',buffer,gain:1,pan:0,offset:0,mute:false,solo:false,nodes:null});render();setStatus('נוסף ערוץ: '+name,'ok')}catch(e){console.error(e);setStatus('לא הצלחתי לפתוח את '+name+'. נסו WAV/MP3/M4A אחר.','err')}}
+    async function addFiles(files){for(const f of [...files])if(f.type.startsWith('audio/')||/\.(mp3|wav|m4a|aac|ogg|webm)$/i.test(f.name))await addFile(f)}
+    uploadBtn.addEventListener('click',()=>fileInput.click());fileInput.addEventListener('change',()=>{addFiles(fileInput.files);fileInput.value=''})
+    ;['dragenter','dragover'].forEach(ev=>drop.addEventListener(ev,e=>{e.preventDefault();drop.classList.add('drag')}));['dragleave','drop'].forEach(ev=>drop.addEventListener(ev,e=>{e.preventDefault();drop.classList.remove('drag')}));drop.addEventListener('drop',e=>addFiles(e.dataTransfer.files));
+    function effectiveGain(t){const solo=tracks.some(x=>x.solo);return (t.mute||(solo&&!t.solo))?0:t.gain}
+    function stopSources(){tracks.forEach(t=>{if(t.nodes?.source){try{t.nodes.source.stop()}catch{} t.nodes=null}})}
+    async function startPlayback(){if(!tracks.length)return;const ac=audioCtx();await ac.resume();const total=duration();if(playhead>=total)playhead=0;playing=true;startedAt=ac.currentTime-playhead;tracks.forEach(t=>{const local=playhead-t.offset;if(local>=t.buffer.duration)return;const source=ac.createBufferSource();source.buffer=t.buffer;const gain=ac.createGain();gain.gain.value=effectiveGain(t)*Number(master.value);let tail=gain;if(ac.createStereoPanner){const pan=ac.createStereoPanner();pan.pan.value=t.pan;gain.connect(pan);pan.connect(ac.destination);tail=pan}else gain.connect(ac.destination);source.connect(gain);const when=ac.currentTime+Math.max(0,-local);const offset=Math.max(0,local);source.start(when,offset);t.nodes={source,gain,tail};});updateButtons();tick()}
+    function pausePlayback(){if(!playing)return;playhead=Math.min(duration(),audioCtx().currentTime-startedAt);playing=false;stopSources();cancelAnimationFrame(raf);updateButtons();updateClock()}
+    function stopPlayback(){playing=false;playhead=0;stopSources();cancelAnimationFrame(raf);updateButtons();updateClock()}
+    function updateClock(){const total=duration();clock.textContent=fmt(playhead)+' / '+fmt(total);progress.style.width=(total?Math.min(100,playhead/total*100):0)+'%'}
+    function tick(){if(!playing)return;playhead=audioCtx().currentTime-startedAt;if(playhead>=duration()){stopPlayback();return}updateClock();raf=requestAnimationFrame(tick)}
+    playBtn.addEventListener('click',()=>playing?pausePlayback():startPlayback());stopBtn.addEventListener('click',stopPlayback);master.addEventListener('input',()=>{masterVal.textContent=Math.round(master.value*100)+'%';tracks.forEach(t=>{if(t.nodes?.gain)t.nodes.gain.gain.value=effectiveGain(t)*Number(master.value)})});
+    tracksEl.addEventListener('input',e=>{const card=e.target.closest('.mix-track');if(!card)return;const t=tracks.find(x=>x.id===card.dataset.id);const ctl=e.target.dataset.ctl;if(!t||!ctl)return;const v=Number(e.target.value);t[ctl]=v;const out=e.target.nextElementSibling;if(ctl==='gain'){out.textContent=Math.round(v*100)+'%';if(t.nodes?.gain)t.nodes.gain.gain.value=effectiveGain(t)*Number(master.value)}else if(ctl==='pan'){out.textContent=v===0?'C':v<0?'L'+Math.round(-v*100):'R'+Math.round(v*100);if(t.nodes?.tail?.pan)t.nodes.tail.pan.value=v}else if(ctl==='offset'){out.textContent=v.toFixed(1)+'s';if(playing){pausePlayback();startPlayback()}}});
+    tracksEl.addEventListener('click',e=>{const b=e.target.closest('[data-act]');if(!b)return;const card=b.closest('.mix-track'),t=tracks.find(x=>x.id===card.dataset.id);if(!t)return;if(b.dataset.act==='remove'){const idx=tracks.indexOf(t);if(t.nodes?.source)try{t.nodes.source.stop()}catch{}tracks.splice(idx,1);render();updateClock();return}if(b.dataset.act==='mute')t.mute=!t.mute;if(b.dataset.act==='solo')t.solo=!t.solo;tracks.forEach(x=>{if(x.nodes?.gain)x.nodes.gain.gain.value=effectiveGain(x)*Number(master.value)});render()});
+    if(!navigator.mediaDevices?.getUserMedia||!window.MediaRecorder){recordBtn.disabled=true;recordBtn.title='הדפדפן הזה לא תומך בהקלטה'}
+    recordBtn.addEventListener('click',async()=>{try{recStream=await navigator.mediaDevices.getUserMedia({audio:{echoCancellation:false,noiseSuppression:false,autoGainControl:false}});recChunks=[];mediaRecorder=new MediaRecorder(recStream);mediaRecorder.ondataavailable=e=>{if(e.data.size)recChunks.push(e.data)};mediaRecorder.onstop=async()=>{clearInterval(recTimer);recStream?.getTracks().forEach(x=>x.stop());const blob=new Blob(recChunks,{type:mediaRecorder.mimeType||'audio/webm'});await addFile(blob,'Recording '+new Date().toLocaleTimeString('he-IL',{hour:'2-digit',minute:'2-digit'}));recordBtn.disabled=false;recordBtn.classList.remove('recording');recordBtn.textContent='● הקלטה';recordStopBtn.disabled=true};mediaRecorder.start(250);recStarted=Date.now();recordBtn.disabled=true;recordBtn.classList.add('recording');recordBtn.textContent='● מקליט…';recordStopBtn.disabled=false;setStatus('הקלטה התחילה. מומלץ להשתמש באוזניות כדי למנוע זליגה.','ok');recTimer=setInterval(()=>{const sec=(Date.now()-recStarted)/1000;recordStopBtn.textContent='■ עצור '+fmt(sec)},250)}catch(e){console.error(e);setStatus('לא התקבלה הרשאה למיקרופון. בדקו הרשאות בדפדפן.','err')}});recordStopBtn.addEventListener('click',()=>{if(mediaRecorder&&mediaRecorder.state!=='inactive')mediaRecorder.stop();recordStopBtn.disabled=true;recordStopBtn.textContent='■ עצור הקלטה'});
+    function audioBufferToWav(buffer){const ch=buffer.numberOfChannels,len=buffer.length*ch*2+44,ab=new ArrayBuffer(len),v=new DataView(ab);let p=0;const w=s=>{for(let i=0;i<s.length;i++)v.setUint8(p++,s.charCodeAt(i))};w('RIFF');v.setUint32(p,36+buffer.length*ch*2,true);p+=4;w('WAVEfmt ');v.setUint32(p,16,true);p+=4;v.setUint16(p,1,true);p+=2;v.setUint16(p,ch,true);p+=2;v.setUint32(p,buffer.sampleRate,true);p+=4;v.setUint32(p,buffer.sampleRate*ch*2,true);p+=4;v.setUint16(p,ch*2,true);p+=2;v.setUint16(p,16,true);p+=2;w('data');v.setUint32(p,buffer.length*ch*2,true);p+=4;const channels=Array.from({length:ch},(_,i)=>buffer.getChannelData(i));for(let i=0;i<buffer.length;i++)for(let c=0;c<ch;c++){let x=Math.max(-1,Math.min(1,channels[c][i]));v.setInt16(p,x<0?x*0x8000:x*0x7fff,true);p+=2}return new Blob([ab],{type:'audio/wav'})}
+    exportBtn.addEventListener('click',async()=>{if(!tracks.length)return;try{pausePlayback();exportBtn.disabled=true;exportBtn.textContent='מייצא…';setStatus('מרנדר את המיקס…');const sr=48000,total=Math.max(.1,duration()),off=new OfflineAudioContext(2,Math.ceil(total*sr),sr),solo=tracks.some(t=>t.solo);tracks.forEach(t=>{if(t.mute||(solo&&!t.solo))return;const src=off.createBufferSource();src.buffer=t.buffer;const g=off.createGain();g.gain.value=t.gain*Number(master.value);src.connect(g);if(off.createStereoPanner){const pan=off.createStereoPanner();pan.pan.value=t.pan;g.connect(pan);pan.connect(off.destination)}else g.connect(off.destination);src.start(t.offset)});const rendered=await off.startRendering(),blob=audioBufferToWav(rendered),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='K-Music-Mix-'+new Date().toISOString().slice(0,10)+'.wav';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),4000);setStatus('המיקס מוכן והורד כ-WAV.','ok')}catch(e){console.error(e);setStatus('הייצוא נכשל בדפדפן הזה.','err')}finally{exportBtn.disabled=!tracks.length;exportBtn.textContent='⇩ ייצוא WAV'}});
+    updateClock();render();
+  })();
+  </script>
+
   <script>
   (()=>{
     const labels={
       top:'בית', explore:'גילוי', music:'המוזיקה של קמחי', influences:'השראות', lineage:'עץ השפעות', world:'מפת עולם',
       'inspiration-finder':'מצא לי השראה', 'lyric-finder':'רדאר ליריקה', 'music-worlds':'עולמות מוזיקליים',
-      eras:'תקופות', notebook:'המחברת', community:'קהילה', merch:'מארצ׳', trivia:'טריוויה', album:'האלבום', about:'הסיפור'
+      eras:'תקופות', notebook:'המחברת', 'mix-studio':'Mix Lab', community:'קהילה', merch:'מארצ׳', trivia:'טריוויה', album:'האלבום', about:'הסיפור'
     };
     const main=document.querySelector('main#app');
     if(!main)return;
@@ -3213,6 +3295,7 @@ d.c.t על הכל
     explore.className='km-screen';
     const cards=[
       ['music','🎧','המוזיקה של קמחי','שירים והאזנה ישירה',true],
+      ['mix-studio','🎛️','Mix Lab','הקלטה, העלאה ומיקס של אודיו',true],
       ['influences','✨','השראות','אמנים שבנו את הסאונד'],
       ['lineage','🧬','עץ השפעות','מי השפיע על מי'],
       ['world','🌍','מפת עולם','סצנות ואמנים מסביב לעולם'],
